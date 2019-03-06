@@ -1,13 +1,16 @@
 const DOM = {
   element: (desc) => {
-    if (typeof desc === 'string') {
+    if (desc instanceof HTMLElement) {
+      return desc;
+    }
+    if (typeof desc === 'string' || typeof desc === 'number') {
       return document.createTextNode(desc);
     }
-    const {type, attrs, content, children} = desc;
+    const {type, attr, content, children} = desc;
     const el = document.createElement(type);
-    if (attrs) {
-      for (key in attrs) {
-        el[key] = attrs[key];
+    if (attr) {
+      for (key in attr) {
+        el[key] = attr[key];
       }
     }
     if (children) {

@@ -2,23 +2,56 @@
 <html>
 <head>
   <title></title>
+  <meta charset="utf-8">
   <style>
     body {
       font-family: monospace;
+      margin: 0;
+    }
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      align-content: center;
+    }
+    .title {
+      font-size: 1.5em;
+      margin: 0 auto 40px;
+    }
+    .before,
+    .after {
+      text-align: center;
+    }
+    .before .hlCount {
+      color: red;
+    }
+    .after .hlCount {
+      color: green;
     }
     .code {
       width: 50ch;
       word-break: break-all;
-      color: gray;
+      color: silver;
+      margin: 20px;
+      text-align: initial;
     }
-    .highlight {
+    .highlight1 {
       font-weight: bold;
       color: black;
+    }
+    .highlight2 {
+      font-weight: bold;
+      color: darkorange;
+    }
+    .highlight3 {
+      font-weight: bold;
+      color: skyblue;
     }
   </style>
 </head>
