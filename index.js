@@ -214,7 +214,102 @@ const state = {
         "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])" onload="l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>[S[1],S[2]]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})"><canvas id=`X`>'
         }),
       create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()});"><canvas id=`X`>'}),
-    ]
+    ],
+    [
+      'mousedown+mouseup → mousemove',
+      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>'}),
+      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[];addEventListener(`mousemove`,e=>e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r())"><canvas id=`X`>'}),
+    ],
+    [
+      'Inline mousemove',
+      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[];addEventListener(`mousemove`,e=>e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r())"><canvas id=`X`>'}),
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+    ],
+    [
+      'Fix <9 select anywhere',
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<81))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+    ],
+    [
+      'UX: use max 2 digit number',
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<81))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+    ],
+    [
+      'Kill the body, the soul is immortal',
+      create({c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>'}),
+      create({c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))">'}),
+    ],
+    [
+      'Spread props in render',
+      create({c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))">'}),
+      create({c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+    ],
+    [
+      'With 🎉',
+      create({c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+      create({c: '<canvas id=`X` onmousemove="!self.Z&&(C=X.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>v[1]-x<9&&v[2]-y<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+    ],
+    [
+      'id → this',
+      create({c: '<canvas id=`X` onmousemove="!self.Z&&(C=X.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>v[1]-x<9&&v[2]-y<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(C=this.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>v[1]-x<9&&v[2]-y<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+    ],
+    [
+      'Fix dragging :(',
+      create({c: '<canvas onmousemove="!self.Z&&(C=this.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>v[1]-x<9&&v[2]-y<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(C=this.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))"> '}),
+    ],
+    [
+      'With: round 2',
+      create({c: '<canvas onmousemove="!self.Z&&(C=this.getContext`2d`,Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>a[0].src?C.drawImage(...a,99,99):C.fillText(...a))"> '}),
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+    ],
+    [
+      'Destructure location hash',
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));this.height=999,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=999,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+    ],
+    [
+      'Height -1',
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=999,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=-1,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+    ],
+    [
+      'Remove null check on drag',
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9))&&(S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=-1,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=-1,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+    ],
+    [
+      'Pull out ctx into outer scope',
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));this.height=-1,Z.map(a=>{with(this.getContext`2d`)arc=a[0].src?drawImage:fillText,arc(...a)})">'}),
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));with(this.getContext`2d`)this.height=-1,Z.map(z=>z[0].src?drawImage(...z):fillText(...z))">'}),
+    ],
+    [
+      'Hash UX is dead, long live the Prompt!',
+      create({c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));with(this.getContext`2d`)this.height=-1,Z.map(z=>z[0].src?drawImage(...z):fillText(...z))">'}),
+      create({c: '<canvas onclick="e=prompt();Z.push([event.x<99?((i=new Image).src=e,i):e,9,9])"onmousemove="with(event)with(getContext`2d`)height=-1,Z=self.Z?Z.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[]">'}),
+    ],
+    [
+      'With: round 3',
+      create({c: '<canvas onclick="e=prompt();Z.push([event.x<99?((i=new Image).src=e,i):e,9,9])"onmousemove="with(event)with(getContext`2d`)height=-1,Z=self.Z?Z.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[]">'}),
+      create({c: 'canvas onmousemove="with(event)with(getContext`2d`)height=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],altKey&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))"> '}),
+    ],
+    [
+      'AltKey → mouse position',
+      create({c: 'canvas onmousemove="with(event)with(getContext`2d`)height=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],altKey&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))"> '}),
+      create({c: '<canvas onmousemove="with(event)with(getContext`2d`)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))">'}),
+    ],
+    [
+      'Ternary for draw',
+      create({c: '<canvas onmousemove="with(event)with(getContext`2d`)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))">'}),
+      create({c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(getContext`2d`[j.src?`drawImage`:`fillText`](...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))">'}),
+    ],
+    [
+      'Get rid of some brackets',
+      create({c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(getContext`2d`[j.src?`drawImage`:`fillText`](...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))">'}),
+      create({c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&getContext`2d`[j.src?`drawImage`:`fillText`](...t)||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&(e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9])">'}),
+    ],
   ],
 };
 function create({c, b}) {
