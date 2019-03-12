@@ -416,7 +416,10 @@ function renderPage(title, a, b) {
     {
       type: 'div',
       attr: {className: 'hlCount'},
-      children: [hlCountA]
+      children: [
+        hlCountA,
+        {type: 'span', attr: {className: 'size'}, children: [ ` (${a.c.length}B)` ]},
+      ],
     },
     render(state.domToSig, a),
   ]});
@@ -424,14 +427,15 @@ function renderPage(title, a, b) {
     {
       type: 'div',
       attr: {className: 'hlCount'},
-      children: [hlCountB]
+      children: [
+        hlCountB,
+        {type: 'span', attr: {className: 'size'}, children: [ ` (${b.c.length}B)` ]},
+      ],
     },
     render(state.domToSig, b),
   ]});
   row.appendChild(before);
-  row.appendChild(DOM.element({type: 'div', children: [
-    -(hlCountA - hlCountB),
-  ]}));
+  row.appendChild(DOM.element({type: 'div', children: [ -(hlCountA - hlCountB) ]}));
   row.appendChild(after);
 
   const page = DOM.element({type: 'div', attr: {className: 'page'}, children: [
