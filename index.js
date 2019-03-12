@@ -209,16 +209,127 @@ const state = {
       }),
     ],
     [
-      'Declan 1',
+      'clearRect → canvas.height',
       create({
-        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])" onload="l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>[S[1],S[2]]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})"><canvas id=`X`>'
-        }),
-      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()});"><canvas id=`X`>'}),
+        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])" onload="l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>[S[1],S[2]]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})"><canvas id=`X`>',
+        "b": [
+          [0,273,0],
+          [273,297,1],
+          [297,383,0],
+        ],
+      }),
+      create({
+        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])" onload="l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>[S[1],S[2]]=[e.x,e.y]);setInterval(_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})"><canvas id=`X`>',
+        "b": [
+          [0,273,0],
+          [273,285,1],
+          [285,371,0],
+        ],
+      }),
+    ],
+    [
+      'rm setInterval → declare render',
+      create({
+        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])" onload="l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>[S[1],S[2]]=[e.x,e.y]);setInterval(_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})"><canvas id=`X`>',
+        "b": [
+          [0,257,0],
+          [257,269,1],
+          [269,353,0],
+          [353,354,1],
+          [354,371,0],
+        ],
+      }),
+      create({
+        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>',
+        "b": [
+          [0,90,0],
+          [90,94,1],
+          [94,104,0],
+          [104,106,1],
+          [106,190,0],
+          [190,191,1],
+          [191,325,0],
+          [325,326,1],
+          [326,348,0],
+          [348,352,1],
+          [352,370,0],
+        ],
+      }),
+    ],
+    [
+      'rm Math.abs (oops)',
+      create({
+        "c": '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[1]-e.x)<9&&f(v[2]-e.y)<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>',
+        "b": [
+          [0,210,0],
+          [210,226,1],
+          [226,279,0],
+          [279,281,1],
+          [281,289,0],
+          [289,290,1],
+          [290,294,0],
+          [294,296,1],
+          [296,304,0],
+          [304,305,1],
+          [305,370,0],
+        ],
+      }),
+      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>'}),
+    ],
+    [
+      'Simpler update of dragging x,y',
+      create({
+        c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>',
+        "b": [
+          [0,304,0],
+          [304,325,1],
+          [325,348,0],
+        ],
+      }),
+      create({
+        c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{S[1]=e.x,S[2]=e.y;r()})"><canvas id=`X`>',
+        "b": [
+          [0,304,0],
+          [304,321,1],
+          [321,344,0],
+        ],
+      }),
     ],
     [
       'mousedown+mouseup → mousemove',
-      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>'}),
-      create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[];addEventListener(`mousemove`,e=>e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r())"><canvas id=`X`>'}),
+      create({
+        c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{S[1]=e.x,S[2]=e.y;r()})"><canvas id=`X`>',
+        "b": [
+          [0,190,0],
+          [190,193,1],
+          [193,209,3],
+          [209,210,1],
+          [210,234,0],
+          [234,251,1],
+          [251,286,0],
+          [286,303,1],
+          [303,326,0],
+          [326,327,1],
+          [327,344,0],
+        ],
+      }),
+      create({
+        c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[];addEventListener(`mousemove`,e=>e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r())"><canvas id=`X`>',
+        "b": [
+          [0,215,0],
+          [215,231,3],
+          [231,247,1],
+          [247,254,2],
+          [254,257,1],
+          [257,292,0],
+          [292,295,1],
+          [295,314,0],
+          [314,316,1],
+          [316,319,0],
+          [319,320,1],
+          [320,337,0],
+        ],
+      }),
     ],
     [
       'Inline mousemove',
@@ -360,6 +471,10 @@ function highlight(hl) {
   sig.b = fillGapsBetweenHighlights(sig.c, highlights);
 
   domNode.parentNode.replaceChild(render(state.domToSig, sig), domNode);
+
+  // print
+  const b = sig.b.map(b => b.join(',')).map(b => `\t[${b}],`).join('\n')
+  console.log(`"b": [\n${b}\n],`)
 }
 function fillGapsBetweenHighlights(content, highlights) {
   const buckets = [];
