@@ -8,6 +8,15 @@
       font-family: monospace;
       margin: 0;
     }
+    video {
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    .aemkei {
+      text-align: center;
+    }
     .page {
       height: 100vh;
       display: flex;
@@ -62,8 +71,21 @@
   </style>
 </head>
 <body>
-<div></div>
+<div class='page'>
+  <a class='aemkei' href='https://twitter.com/aemkei' title='aemkei' alt='aemkei'>
+    <video src='aemkei.mp4' autoplay loop muted></video>
+  </a>
+</div>
+<div class='page' id='explanation'>
+  <h1>Original Josho's solution</h1>
+</div>
+<div class='page' id='journey'>
+  <h1>The journey</h1>
+</div>
 <script src='DOM.js'></script>
 <script src='index.js'></script>
+<div class='page' id='fin'>
+  <h1>Fin</h1>
+</div>
 </body>
 </html>

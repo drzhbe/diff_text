@@ -1,5 +1,19 @@
 const state = {
   domToSig: new Map(),
+  explanation: [
+    [
+      'HAHAH',
+      create({
+        "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
+        "b": [
+          [0,6,0],
+          [6,14,1],
+          [14,457,0],
+          [457,474,1],
+        ],
+      }),
+    ],
+  ],
   pages: [
     [
       'No script, no closing tags',
@@ -175,15 +189,17 @@ const state = {
       create({
         "c": "<body onfocus='g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])' onload='l=addEventListener;f=(i)=>Math.abs(i);C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[0]-e.x)<9&&f(v[1]-e.y)<9));l(`mouseup`,e=>[S[0],S[1]]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(([D,x,y])=>typeof(D)==`object`?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})'><canvas id=`X`>",
         "b": [
-          [0,126,0],
+          [0,119,0],
+          [119,126,3],
           [126,137,1],
           [137,400,0],
-        ]
+        ],
       }),
       create({
         "c": "<body onfocus='g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9])' onload='l=addEventListener;f=(i)=>i<0?-i:i;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>f(v[0]-e.x)<9&&f(v[1]-e.y)<9));l(`mouseup`,e=>[S[0],S[1]]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(([D,x,y])=>typeof(D)==`object`?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))})'><canvas id=`X`>",
         "b": [
-          [0,126,0],
+          [0,119,0],
+          [119,126,3],
           [126,134,1],
           [134,397,0],
         ],
@@ -515,7 +531,9 @@ const state = {
           [8,15,1],
           [15,40,0],
           [40,41,1],
-          [41,299,0],
+          [41,225,0],
+          [225,226,1],
+          [226,299,0],
         ],
     }),
       create({
@@ -698,11 +716,13 @@ const state = {
       }),
     ],
     [
-      'Hash UX is dead, long live the Prompt! TODO: split more',
+      'Hash UX is dead, long live the Prompt!',
       create({
         c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));with(this.getContext`2d`)this.height=-1,Z.map(z=>z[0].src?drawImage(...z):fillText(...z))">',
         "b": [
-          [0,114,0],
+          [0,33,0],
+          [33,35,1],
+          [35,114,0],
           [114,161,1],
           [161,169,3],
           [169,170,2],
@@ -722,6 +742,35 @@ const state = {
           [46,78,3],
           [78,79,1],
           [79,241,0],
+        ],
+      }),
+    ],
+    [
+      'Z (object storage) declaration',
+      create({
+        c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));with(this.getContext`2d`)this.height=-1,Z.map(z=>z[0].src?drawImage(...z):fillText(...z))">',
+        "b": [
+          [0,21,0],
+          [21,38,1],
+          [38,295,0],
+        ],
+      }),
+      create({
+        c: '<canvas onclick="e=prompt();Z.push([event.x<99?((i=new Image).src=e,i):e,9,9])"onmousemove="with(event)with(getContext`2d`)height=-1,Z=self.Z?Z.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[]">',
+        "b": [
+          [0,133,0],
+          [133,147,1],
+          [147,148,0],
+          [148,149,2],
+          [149,152,0],
+          [152,161,3],
+          [161,202,0],
+          [202,204,3],
+          [204,225,0],
+          [225,235,2],
+          [235,236,0],
+          [236,239,1],
+          [239,241,0],
         ],
       }),
     ],
@@ -920,45 +969,58 @@ function renderHighlightedCount(sig) {
 }
 function renderPage(title, a, b) {
   const row = DOM.element({type: 'div', attr: {className: 'row'}});
-  const hlCountA = highlightedCount(a);
-  const hlCountB = highlightedCount(b);
-  const before = DOM.element({type: 'div', attr: {className: 'before'}, children: [
-    {
-      type: 'div',
-      attr: {className: 'hlCount'},
-      children: [
-        hlCountA,
-        {type: 'span', attr: {className: 'size'}, children: [ ` (${a.c.length}B)` ]},
-      ],
-    },
-    render(state.domToSig, a),
-  ]});
-  const after = DOM.element({type: 'div', attr: {className: 'after'}, children: [
-    {
-      type: 'div',
-      attr: {className: 'hlCount'},
-      children: [
-        hlCountB,
-        {type: 'span', attr: {className: 'size'}, children: [ ` (${b.c.length}B)` ]},
-      ],
-    },
-    render(state.domToSig, b),
-  ]});
-  row.appendChild(before);
-  row.appendChild(DOM.element({type: 'div', children: [ -(hlCountA - hlCountB) ]}));
-  row.appendChild(after);
+  let hlCountA, hlCountB, before, after;
+  if (a) {
+    hlCountA = highlightedCount(a);
+    before = DOM.element({type: 'div', attr: {className: 'before'}, children: [
+      {
+        type: 'div',
+        attr: {className: 'hlCount'},
+        children: [
+          hlCountA,
+          {type: 'span', attr: {className: 'size'}, children: [ ` (${a.c.length}B)` ]},
+        ],
+      },
+      render(state.domToSig, a),
+    ]});
+  }
+  if (b) {
+    hlCountB = highlightedCount(b);
+    after = DOM.element({type: 'div', attr: {className: 'after'}, children: [
+      {
+        type: 'div',
+        attr: {className: 'hlCount'},
+        children: [
+          hlCountB,
+          {type: 'span', attr: {className: 'size'}, children: [ ` (${b.c.length}B)` ]},
+        ],
+      },
+      render(state.domToSig, b),
+    ]});
+  }
+  a &&      row.appendChild(before);
+  a && b && row.appendChild(DOM.element({type: 'div', children: [ -(hlCountA - hlCountB) ]}));
+  b &&      row.appendChild(after);
 
   const page = DOM.element({type: 'div', attr: {className: 'page'}, children: [
     {type: 'div', attr: {className: 'title'}, children: [title]},
     row,
   ]});
-  document.body.appendChild(page);
+
+  if (!b) {
+    document.body.insertBefore(page, journeyPage);
+  } else {
+    document.body.insertBefore(page, finPage);
+  }
 }
 
+const journeyPage = document.getElementById('journey');
+const finPage = document.getElementById('fin');
 document.body.addEventListener('keydown', e => {
   if (e.key === '1' || e.key === '2' || e.key === '3') {
     highlight(+e.key);
   }
 });
 
+state.explanation.forEach(([title, a]) => renderPage(title, a));
 state.pages.forEach(([title, a, b]) => renderPage(title, a, b));
