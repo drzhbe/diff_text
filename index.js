@@ -5,13 +5,10 @@ const state = {
       'HAHAH',
       create({
         "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
-        "b": [
-          [0,6,0],
-          [6,14,1],
-          [14,457,0],
-          [457,474,1],
-        ],
+        
       }),
+      undefined,
+      '1 - original - 399f2d14325431aad2a8f05fa581d25d4fffa598.gif',
     ],
   ],
   pages: [
@@ -291,6 +288,7 @@ const state = {
         ],
       }),
       create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>'}),
+      '3 - bug 🙁 - 8f575a2b34b1da93b88add1cab53c49cc50315e6.gif'
     ],
     [
       'Simpler update of dragging x,y',
@@ -346,6 +344,7 @@ const state = {
           [320,337,0],
         ],
       }),
+      '2 - mousemove - a68235019423ffb9a2a328d66dcaac2a13504805.gif',
     ],
     [
       'Inline mousemove (so semantic)',
@@ -714,6 +713,7 @@ const state = {
           [292,295,0],
         ],
       }),
+      '4 - everything on a single mousemove - 285f8b650c8d01b17f510ef1174d62ab61e0a5f9.gif',
     ],
     [
       'Hash UX is dead, long live the Prompt!',
@@ -744,6 +744,7 @@ const state = {
           [79,241,0],
         ],
       }),
+      '5 - prompt via click - 10e8b176f359e4f1f4768de0801cf09a3378aaa6.gif',
     ],
     [
       'Z (object storage) declaration',
@@ -864,6 +865,7 @@ const state = {
         ],
       }),
       create({c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&getContext`2d`[j.src?`drawImage`:`fillText`](...t)||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&(e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9])">'}),
+    '6 - final - b8f7f09213aaecf3d4f677971f6b658448df5776.gif',
     ],
   ],
 };
@@ -967,7 +969,7 @@ function renderHighlightedCount(sig) {
       children: [],
   };
 }
-function renderPage(title, a, b) {
+function renderPage(title, a, b, img) {
   const row = DOM.element({type: 'div', attr: {className: 'row'}});
   let hlCountA, hlCountB, before, after;
   if (a) {
@@ -1006,6 +1008,9 @@ function renderPage(title, a, b) {
     {type: 'div', attr: {className: 'title'}, children: [title]},
     row,
   ]});
+  if (img) {
+    page.appendChild(DOM.element({ type: 'img', attr: {className: 'demo_img', src: img }}));
+  }
 
   if (!b) {
     document.body.insertBefore(page, journeyPage);
@@ -1022,5 +1027,5 @@ document.body.addEventListener('keydown', e => {
   }
 });
 
-state.explanation.forEach(([title, a]) => renderPage(title, a));
-state.pages.forEach(([title, a, b]) => renderPage(title, a, b));
+state.explanation.forEach(([title, a, _, img]) => renderPage(title, a, undefined, img));
+state.pages.forEach(([title, a, b, img]) => renderPage(title, a, b, img));
