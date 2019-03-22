@@ -2,13 +2,44 @@ const state = {
   domToSig: new Map(),
   explanation: [
     [
-      'HAHAH',
+      'Canvas',
       create({
         "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
-        
+        "b": [
+          [0,33,0],
+          [33,43,1],
+          [43,63,0],
+          [63,123,1],
+          [123,474,0],
+        ],
       }),
       undefined,
       '1 - original - 399f2d14325431aad2a8f05fa581d25d4fffa598.gif',
+    ],
+    [
+      'Elements',
+      create({
+        "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
+        "b": [
+          [0,124,0],
+          [124,128,1],
+          [128,171,0],
+          [171,177,1],
+          [177,178,0],
+          [178,181,2],
+          [181,218,0],
+          [218,220,2],
+          [220,223,0],
+          [223,225,2],
+          [225,228,0],
+          [228,229,2],
+          [229,251,0],
+          [251,257,1],
+          [257,369,0],
+          [369,374,1],
+          [374,474,0],
+        ],
+      }),
     ],
   ],
   pages: [
