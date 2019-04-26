@@ -1,4 +1,6 @@
 const DOM = {
+  valuelessAttributes: ['autoplay', 'loop', 'muted'],
+  mapAttributes: {className: 'class'},
   element: (desc) => {
     if (desc instanceof HTMLElement) {
       return desc;
@@ -10,7 +12,9 @@ const DOM = {
     const el = document.createElement(type);
     if (attr) {
       for (key in attr) {
-        el[key] = attr[key];
+        el.setAttribute(
+          DOM.mapAttributes[key] || key,
+          key in DOM.valuelessAttributes ? '' : attr[key]);
       }
     }
     if (children) {

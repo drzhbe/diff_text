@@ -13,8 +13,6 @@ const state = {
           [123,474,0],
         ],
       }),
-      undefined,
-      '1 - original - 399f2d14325431aad2a8f05fa581d25d4fffa598.gif',
     ],
     [
       'Elements',
@@ -38,6 +36,66 @@ const state = {
           [257,369,0],
           [369,374,1],
           [374,474,0],
+        ],
+      }),
+    ],
+    [
+      'User input',
+      create({
+        "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
+        "b": [
+          [0,129,0],
+          [129,231,1],
+          [231,474,0],
+        ],
+      }),
+    ],
+    [
+      'User input',
+      undefined,
+      undefined,
+      'element_structure.mp4',
+    ],
+    [
+      'Drag & drop',
+      create({
+        "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
+        "b": [
+          [0,14,0],
+          [14,32,3],
+          [32,44,0],
+          [44,62,2],
+          [62,232,0],
+          [232,249,3],
+          [249,257,1],
+          [257,261,3],
+          [261,289,2],
+          [289,307,3],
+          [307,326,1],
+          [326,327,3],
+          [327,474,0],
+        ],
+      }),
+    ],
+    [
+      'Drag & drop',
+      undefined,
+      undefined,
+      'dragndrop.mp4',
+    ],
+    [
+      'Render',
+      create({
+        "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
+        "b": [
+          [0,328,0],
+          [328,344,3],
+          [344,369,2],
+          [369,378,1],
+          [378,399,2],
+          [399,455,1],
+          [455,457,3],
+          [457,474,0],
         ],
       }),
     ],
@@ -319,7 +377,12 @@ const state = {
         ],
       }),
       create({c: '<body onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};l=addEventListener;C=X.getContext`2d`;Z=[];l(`mousedown`,e=>S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9));l(`mouseup`,e=>{[S[1],S[2]]=[e.x,e.y];r()})"><canvas id=`X`>'}),
-      '3 - bug 🙁 - 8f575a2b34b1da93b88add1cab53c49cc50315e6.gif'
+    ],
+    [
+      'rm Math.abs (oops)',
+      undefined,
+      undefined,
+      'broken_drag_area.mp4',
     ],
     [
       'Simpler update of dragging x,y',
@@ -902,6 +965,7 @@ const state = {
 };
 function create({c, b}) {
   return {
+    t: 'code',
     c: c || '',
     b: b || [[0, c.length, 0]], // [start<number>, end<number>, highlightType<0|1|2|3>]
   };
@@ -1040,14 +1104,15 @@ function renderPage(title, a, b, img) {
     row,
   ]});
   if (img) {
-    page.appendChild(DOM.element({ type: 'img', attr: {className: 'demo_img', src: img }}));
+    page.appendChild(DOM.element({ type: 'video', attr: {
+      className: 'demo_video',
+      src: img,
+      autoplay: '',
+      loop: '',
+      muted: '',
+    }}));
   }
-
-  if (!b) {
-    document.body.insertBefore(page, journeyPage);
-  } else {
-    document.body.insertBefore(page, finPage);
-  }
+  return page;
 }
 
 const journeyPage = document.getElementById('journey');
@@ -1057,6 +1122,11 @@ document.body.addEventListener('keydown', e => {
     highlight(+e.key);
   }
 });
+document.body.addEventListener('click', e => {
+  if (e.target.nodeName === "VIDEO") {
+    e.target.paused ? e.target.play() : e.target.pause();
+  }
+});
 
-state.explanation.forEach(([title, a, _, img]) => renderPage(title, a, undefined, img));
-state.pages.forEach(([title, a, b, img]) => renderPage(title, a, b, img));
+state.explanation.forEach(([title, a, _, img]) => document.body.insertBefore(renderPage(title, a, undefined, img), journeyPage));
+state.pages.forEach(([title, a, b, img]) => document.body.insertBefore(renderPage(title, a, b, img), finPage));
