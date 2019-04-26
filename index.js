@@ -54,7 +54,7 @@ const state = {
       'User input',
       undefined,
       undefined,
-      'element_structure.mp4',
+      'assets/element_structure.mp4',
     ],
     [
       'Drag & drop',
@@ -81,7 +81,7 @@ const state = {
       'Drag & drop',
       undefined,
       undefined,
-      'dragndrop.mp4',
+      'assets/dragndrop.mp4',
     ],
     [
       'Render',
@@ -382,7 +382,7 @@ const state = {
       'rm Math.abs (oops)',
       undefined,
       undefined,
-      'broken_drag_area.mp4',
+      'assets/broken_drag_area.mp4',
     ],
     [
       'Simpler update of dragging x,y',
