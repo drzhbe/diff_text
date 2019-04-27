@@ -455,8 +455,8 @@ const state = {
       create({
         c: '<body onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]"><canvas id=`X`>',
         "b": [
-          [0,5,0],
-          [5,30,1],
+          [0,6,0],
+          [6,30,1],
           [30,102,3],
           [102,104,1],
           [104,329,0],
