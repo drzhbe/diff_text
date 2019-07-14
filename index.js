@@ -2,6 +2,12 @@ const state = {
   domToSig: new Map(),
   explanation: [
     [
+      'Demo',
+      undefined,
+      undefined,
+      'assets/element_structure.mp4',
+    ],
+    [
       'Canvas',
       create({
         "c": "<body><script>l=addEventListener;d=document;f=(i)=>Math.abs(i);C=d.body.appendChild(d.createElement`canvas`).getContext`2d`;Z=[];onhashchange=_=>{g=location.hash.split`#`,Z.push({D:g[2]?((i=new Image).src=g[2],i):g[1],x:30,y:30,})};l(`mousedown`,e=>S=Z.find(v=>f(v.x-e.x)<30&&f(v.y-e.y)<30));l(`mouseup`,e=>[S.x,S.y]=[e.x,e.y]);setInterval(_=>{C.clearRect(0,0,300,300),Z.map(m=>typeof(m.D)==`object`?C.drawImage(m.D,m.x,m.y,99,99):C.fillText(m.D,m.x,m.y))});</script></body>",
@@ -49,12 +55,6 @@ const state = {
           [231,474,0],
         ],
       }),
-    ],
-    [
-      'User input',
-      undefined,
-      undefined,
-      'assets/element_structure.mp4',
     ],
     [
       'Drag & drop',
