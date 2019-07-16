@@ -564,7 +564,13 @@ const state = {
       }),
     ],
     [
-      'onmousemove alone (pt. 3) where we learn about G (and array comparison)',
+      'onmousemove alone (pt. 3)',
+    ],
+    [
+      'where we learn about G',
+    ],
+    [
+      '(and array comparison)',
       create({
         c: '<canvas id=`X` onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]">',
         "b": [
@@ -914,13 +920,13 @@ const state = {
       }),
     ],
     [
-      'Everything in mousemove (onClick → altKey) TODO: split more',
+      'Everything in mousemove (onClick → altKey)',
       create({
         c: '<canvas onclick="e=prompt();Z.push([event.x<99?((i=new Image).src=e,i):e,9,9])"onmousemove="with(event)with(getContext`2d`)height=-1,Z=self.Z?Z.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[]">',
         "b": [
           [0,8,0],
           [8,17,1],
-          [17,78,0],
+          [17,78,3],
           [78,79,1],
           [79,241,0],
         ],
@@ -928,19 +934,11 @@ const state = {
       create({
         c: 'canvas onmousemove="with(event)with(getContext`2d`)height=-1,E=self.E?E.map(t=>([j,k,l]=t)&&(j.src?drawImage(...t):fillText(...t))||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],altKey&&((e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9]))"> ',
         "b": [
-          [0,61,0],
-          [61,62,2],
-          [62,70,0],
-          [70,77,1],
-          [77,130,0],
-          [130,132,3],
-          [132,154,0],
-          [154,161,1],
-          [161,162,0],
-          [162,163,1],
-          [163,165,0],
-          [165,167,2],
-          [167,239,0],
+          [0,168,0],
+          [168,176,1],
+          [176,177,0],
+          [177,235,3],
+          [235,239,0],
         ],
       }),
     ],
@@ -1002,8 +1000,15 @@ const state = {
           [227,229,0],
         ],
       }),
-      create({c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&getContext`2d`[j.src?`drawImage`:`fillText`](...t)||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&(e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9])">'}),
-    '6 - final - b8f7f09213aaecf3d4f677971f6b658448df5776.gif',
+      create({
+        c: '<canvas onmousemove="with(event)width=-1,E=self.E?E.map(t=>([j,k,l]=t)&&getContext`2d`[j.src?`drawImage`:`fillText`](...t)||Math.hypot(k-x,l-y)<9?[j,x,y]:t):[],y<9&&(e=prompt())&&E.push([x<99?((i=new Image).src=e,i):e,9,9])">',
+      }),
+    ],
+    [
+      'Final version',
+      undefined,
+      undefined,
+      'assets/final-golf.mp4',
     ],
   ],
 };
