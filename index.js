@@ -515,21 +515,14 @@ const state = {
       }),
     ],
     [
-      'onmousemove alone',
+      'onmousemove alone (pt. 1)',
       create({
         c: '<canvas id=`X` onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]">',
         "b": [
-          [0,104,0],
-          [104,109,2],
-          [109,111,0],
-          [111,120,1],
-          [120,195,0],
-          [195,199,2],
-          [199,209,1],
-          [209,215,2],
-          [215,294,0],
-          [294,295,2],
-          [295,315,0],
+          [0,201,0],
+          [201,209,1],
+          [209,296,2],
+          [296,315,3],
           [315,319,2],
           [319,320,1],
           [320,321,0],
@@ -539,12 +532,55 @@ const state = {
         c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))">',
         "b": [
           [0,28,0],
-          [28,39,2],
-          [39,59,0],
+          [28,40,1],
+          [40,59,3],
           [59,65,2],
+          [65,67,1],
+          [67,318,0],
+        ],
+      }),
+    ],
+    [
+      'onmousemove alone (pt. 2)',
+      create({
+        c: '<canvas id=`X` onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]">',
+        "b": [
+          [0,111,0],
+          [111,120,1],
+          [120,196,2],
+          [196,199,3],
+          [199,200,1],
+          [200,321,0],
+        ],
+      }),
+      create({
+        c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))">',
+        "b": [
+          [0,146,0],
+          [146,237,2],
+          [237,316,3],
+          [316,318,0],
+        ],
+      }),
+    ],
+    [
+      'onmousemove alone (pt. 3) where we learn about G (and array comparison)',
+      create({
+        c: '<canvas id=`X` onmousemove="(e=event)&&e.which&&(S=Z.find(v=>v[1]*v[2]-e.x*e.y<99))&&(S[1]=e.x,S[2]=e.y)&&r()" onfocus="g=location.hash.split`#`,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]),r()" onload="r=_=>{X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))};C=X.getContext`2d`;Z=[]">',
+        "b": [
+          [0,321,0],
+        ],
+      }),
+      create({
+        c: '<canvas id=`X` onmousemove="!window.Z&&(C=X.getContext`2d`,Z=G=[]);(e=event)&&e.which&&(S=Z.find(v=>v[1]-e.x<9&&v[2]-e.y<9))&&(S[1]=e.x,S[2]=e.y);g=location.hash.split`#`;g>G|G>g&&(G=g,Z.push([g[2]?((i=new Image).src=g[2],i):g[1],9,9]));X.height=999,Z.map(([D,x,y])=>D.src?C.drawImage(D,x,y,99,99):C.fillText(D,x,y))">',
+        "b": [
+          [0,61,0],
+          [61,65,1],
           [65,171,0],
-          [171,185,2],
-          [185,318,0],
+          [171,180,2],
+          [180,181,0],
+          [181,184,1],
+          [184,318,0],
         ],
       }),
     ],
@@ -841,13 +877,21 @@ const state = {
       '5 - prompt via click - 10e8b176f359e4f1f4768de0801cf09a3378aaa6.gif',
     ],
     [
+      'x < 99 is for image',
+      undefined,
+      undefined,
+      'assets/x99.mp4',
+    ],
+    [
       'Z (object storage) declaration',
       create({
         c: '<canvas onmousemove="!self.Z&&(Z=G=[]);with(event)which&&(S=Z.find(v=>Math.hypot(v[1]-x,v[2]-y)<9),S[1]=x,S[2]=y);[,g,h]=location.hash.split`#`;j=g+h;G!=j&&(G=j,Z.push([h?((i=new Image).src=h,i):g,9,9]));with(this.getContext`2d`)this.height=-1,Z.map(z=>z[0].src?drawImage(...z):fillText(...z))">',
         "b": [
           [0,21,0],
           [21,38,1],
-          [38,295,0],
+          [38,58,0],
+          [58,112,2],
+          [112,295,0],
         ],
       }),
       create({
